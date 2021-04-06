@@ -42,7 +42,7 @@
             android:paddingBottom="8sp"
             android:singleLine="true"
             android:textSize="16sp"
-            tools:text="ion-2.x.a-b_device-20200101-0000-OFFICIAL-Release.zip" />
+            tools:text="TenX-OS_device-11.0-20210101-0000-Cyan-Official.zip" />
 
         <TextView
             android:id="@+id/build_date"
