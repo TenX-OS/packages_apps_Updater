@@ -135,5 +135,5 @@
     <string name="forum_info_summary">View forum posts</string>
     <string name="error_open_url">Failed to open URL in browser</string>
 
-    <string name="changelog_url" translatable="false">https://raw.githubusercontent.com/Ten-X-Devices/TenX_Changelogs/master/%s/%s.txt</string>
+    <string name="changelog_url" translatable="false">https://raw.githubusercontent.com/Ten-X-Devices/TenX_Changelogs/master/%s/tenx_%s.txt</string>
 </resources>
