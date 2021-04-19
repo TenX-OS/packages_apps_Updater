@@ -41,7 +41,7 @@ public final class Constants {
     static final String PROP_BUILD_VERSION = "org.tenx_version";
     static final String PROP_VERSION_CODE = "org.tenx.ota.version_code";
     static final String OTA_URL = "https://raw.githubusercontent.com/Ten-X-Devices/TenX_OTA/master/%s/%s.json";
-    static final String DOWNLOAD_WEBPAGE_URL = "https://raw.githubusercontent.com/Ten-X-Devices/TenX_Changelogs/master/%s/%s.txt";
+    static final String DOWNLOAD_WEBPAGE_URL = "https://sourceforge.net/projects/tenx-os/files/%s/%s/download";
     public static final String DOWNLOAD_PATH = "/data/system_updates/";
     static final String EXPORT_PATH = "TenX-Updates/";
 }
