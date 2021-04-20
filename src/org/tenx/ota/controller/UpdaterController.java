@@ -322,21 +322,7 @@ public class UpdaterController {
         return true;
     }
 
-    private void requestPermission() {
-        try {
-            Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-            intent.addCategory("android.intent.category.DEFAULT");
-            intent.setData(Uri.parse(String.format("package:%s", mContext.getApplicationContext().getPackageName())));
-            mContext.startActivity(intent);
-        } catch (Exception e) {
-            Intent intent = new Intent();
-            intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-            mContext.startActivity(intent);
-        }
-    }
-
     public void startDownload(String downloadId) {
-        requestPermission();
         Log.d(TAG, "Starting " + downloadId);
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
             return;
