@@ -17,12 +17,16 @@
  */
 package org.tenx.ota.controller;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.os.Environment;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.util.Log;
 
 import org.tenx.ota.UpdatesDbHelper;
@@ -32,6 +36,7 @@ import org.tenx.ota.model.Update;
 import org.tenx.ota.model.UpdateInfo;
 import org.tenx.ota.model.UpdateStatus;
 
+import androidx.core.app.ActivityCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import java.io.File;
@@ -317,7 +322,21 @@ public class UpdaterController {
         return true;
     }
 
+    private void requestPermission() {
+        try {
+            Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+            intent.addCategory("android.intent.category.DEFAULT");
+            intent.setData(Uri.parse(String.format("package:%s", mContext.getApplicationContext().getPackageName())));
+            mContext.startActivity(intent);
+        } catch (Exception e) {
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+            mContext.startActivity(intent);
+        }
+    }
+
     public void startDownload(String downloadId) {
+        requestPermission();
         Log.d(TAG, "Starting " + downloadId);
         if (!mDownloads.containsKey(downloadId) || isDownloading(downloadId)) {
             return;
