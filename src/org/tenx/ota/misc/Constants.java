@@ -31,7 +31,7 @@ public final class Constants {
     static final String PROP_AB_DEVICE = "ro.build.ab_update";
     static final String PROP_DEVICE = "org.tenx.device";
     static final String PROP_BUILD_VERSION = "org.tenx.version";
-    static final String OTA_URL = "https://raw.githubusercontent.com/Ten-X-Devices/TenX_OTA/master/builds/X00T.json";
+    static final String OTA_URL = "https://raw.githubusercontent.com/Ten-X-Devices/TenX_OTA/master/builds/%s.json";
     static final String MAINTAINER_URL = "org.tenx.device_maintainer";
     static final String DOWNLOAD_WEBPAGE_URL = "https://raw.githubusercontent.com/Ten-X-Devices/TenX_Changelogs/master/changelogs/%s/%s.txt";
     static final String EXPORT_PATH = "TenX-Updates/";
